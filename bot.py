@@ -48,7 +48,7 @@ async def jitosol_multiply():
 async def check_liquidity():
     liquidity, dollars = await jitosol_multiply()
 
-    if liquidity > 0.0:
+    if liquidity >= 1000:
         await bot.get_channel(int(env['CHANNEL'])).send('JITOSOL Multiply Liquidity Available: ' + str(dollars))
 
 
