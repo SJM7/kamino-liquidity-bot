@@ -64,7 +64,6 @@ async def check_liquidity():
         if result:
             liquidity, dollars = result
             if liquidity >= 1000:
-                logger.info(f"High liquidity detected: {dollars}")
                 await bot.get_channel(int(env['CHANNEL'])).send('JITOSOL Multiply Liquidity Available: ' + str(dollars))
             else:
                 logger.debug(f"Current liquidity: {dollars}")
